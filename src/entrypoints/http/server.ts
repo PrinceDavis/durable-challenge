@@ -6,23 +6,20 @@ import { security, registerDiContainer } from './middlewares';
 import { config, Logger } from '../../adapters'
 
 const app = express()
-
 const server = createHTTPServer(app)
 
 gracefulShutdown(server);
+
 app.use(helmet({ contentSecurityPolicy: (config.server.nodeEnv === 'production') ? undefined : false }));
-
-
-app.get('/healthcheck', function healthcheckEndpoint(req, res) {
-  res.status(200).send('OK');
-});
 
 app.use(registerDiContainer);
 app.use(security);
 app.use(express.json());
-app.use('/user', userRoutes);
-app.use('/expense', expenseRoutes);
 
+// app.use('/expense', expenseRoutes);
+app.get('/healthcheck', function healthcheckEndpoint(req, res) {
+  res.status(200).send('OK');
+});
 app.use(function(req, res) {
   res.status(404).json({
     error: `${req.method} method is not defined on ${req.path}`,
