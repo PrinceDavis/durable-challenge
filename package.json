@@ -1,11 +1,12 @@
 {
   "name": "durable-challenge",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/src/app.js",
   "author": "ThankGod Ossaija (Tg) <codebugsolved@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "joi": "^17.6.0",
     "log4js": "^6.4.1",
     "semver": "^7.3.5"
   },
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^27.4.1",
+    "@types/joi": "^17.2.3",
     "@types/log4js": "^2.3.5",
     "@types/semver": "^7.3.9",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
