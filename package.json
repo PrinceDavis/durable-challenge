@@ -5,7 +5,13 @@
   "author": "ThankGod Ossaija (Tg) <codebugsolved@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/helmet": "^4.0.0",
+    "awilix": "^6.1.0",
     "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "http-graceful-shutdown": "^3.1.6",
+    "install": "^0.13.0",
     "joi": "^17.6.0",
     "log4js": "^6.4.1",
     "semver": "^7.3.5"
@@ -37,6 +43,8 @@
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/http-graceful-shutdown": "^2.3.0",
     "@types/jest": "^27.4.1",
     "@types/joi": "^17.2.3",
     "@types/log4js": "^2.3.5",

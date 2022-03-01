@@ -3,10 +3,7 @@ module.exports = {
     node: true,
     es2021: true,
   },
-  rules: {
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-  },
+  rules: {},
   extends: ['standard', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
