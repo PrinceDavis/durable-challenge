@@ -10,8 +10,8 @@ export const router = Router();
  */
  router.get('/search', validateQueryInputs, async function search(req:any, res) {
   const query = {
-    pageSize: Number(<string>req.query.pageSize),
     searchString: <string>req.query.searchString,
+    pageSize: Number(<string>req.query.pageSize),
     sortOrder: <string>req.query.sortOrder,
     page: Number(<string>req.query.page),
     sortBy: <string>req.query.sortBy,
