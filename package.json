@@ -26,7 +26,7 @@
     "watch-node": "nodemon dist/src/app.js",
     "watch-test": "yarn test -- --watchAll ",
     "build": "yarn lint && yarn build-ts && yarn test",
-    "lint": "eslint --ignore-path .eslintignore . --ext .ts --fix",
+    "lint": "eslint --ignore-path .eslintignore.js . --ext .ts --fix",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "test": "jest --forceExit --coverage --verbose --detectOpenHandles --testTimeout=10000",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,green.bold\" \"yarn watch-ts\" \"yarn  watch-node\""
