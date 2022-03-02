@@ -14,7 +14,7 @@ interface Params {
   page?: number
 }
 
-export class ShowUsersPreferences extends UseCase {
+export class SearchGithubRepoWithMongodb extends UseCase {
   private logger: typeof Logger;
 
   constructor({  logger }: ArgsI) {
@@ -67,4 +67,4 @@ export class ShowUsersPreferences extends UseCase {
   }
 }
 
-ShowUsersPreferences.setEvents(["SUCCESS", "ERROR"]);
+SearchGithubRepoWithMongodb.setEvents(["SUCCESS", "ERROR"]);
