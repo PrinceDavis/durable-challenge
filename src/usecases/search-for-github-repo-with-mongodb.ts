@@ -1,5 +1,4 @@
 import { Logger } from '../adapters/logger';
-import { UseCase } from './use-case'
 import nodeFetch from 'node-fetch'
 
 interface ArgsI {
@@ -14,26 +13,23 @@ interface Params {
   page?: number
 }
 
-export class SearchGithubRepoWithMongodb extends UseCase {
+export class SearchGithubRepoWithMongodb {
   private logger: typeof Logger;
 
   constructor({  logger }: ArgsI) {
-    super();
     this.logger = logger;
   }
 
-  async execute(params: Params): Promise<void> {
-    const { SUCCESS, ERROR  } = this.events;
+  async execute(params: Params): Promise<any> {
     const baseUrl = 'https://api.github.com/search/repositories'
     const queryString = this.buildQueryParam(params)
-
     try {
       const response = await nodeFetch(`${baseUrl}?${queryString}`)
-      this.emit(SUCCESS, response.json());
-
+      const data = await response.json()
+      return data
     } catch (ex) {
       this.logger.error(ex);
-      this.emit(ERROR, ex)
+      throw ex
     }
   }
 
@@ -44,6 +40,10 @@ export class SearchGithubRepoWithMongodb extends UseCase {
     if(searchString) {
       queryParams.push(
         `q=${encodeURIComponent(`${searchString} mongodb in:file`)}`
+      )
+    }else {
+      queryParams.push(
+        `q=${encodeURIComponent('mongodb in:file')}`
       )
     }
 
@@ -66,5 +66,3 @@ export class SearchGithubRepoWithMongodb extends UseCase {
     return queryParams.join('&')
   }
 }
-
-SearchGithubRepoWithMongodb.setEvents(["SUCCESS", "ERROR"]);

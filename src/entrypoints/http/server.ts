@@ -4,6 +4,7 @@ import express from 'express';
 import helmet from 'helmet';
 import { security, registerDiContainer } from './middlewares';
 import { config, Logger } from '../../adapters'
+import { router } from './search-controller';
 
 const app = express()
 const server = createHTTPServer(app)
@@ -16,7 +17,7 @@ app.use(registerDiContainer);
 app.use(security);
 app.use(express.json());
 
-// app.use('/expense', expenseRoutes);
+app.use('/v1', router);
 app.get('/healthcheck', function healthcheckEndpoint(req, res) {
   res.status(200).send('OK');
 });

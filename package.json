@@ -5,16 +5,16 @@
   "author": "ThankGod Ossaija (Tg) <codebugsolved@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/helmet": "^4.0.0",
     "awilix": "^6.1.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "helmet": "^5.0.2",
     "http-graceful-shutdown": "^3.1.6",
+    "http-status": "^1.5.0",
     "install": "^0.13.0",
     "joi": "^17.6.0",
     "log4js": "^6.4.1",
-    "node-fetch": "^3.2.1",
+    "node-fetch": "^2.6.1",
     "semver": "^7.3.5"
   },
   "scripts": {
@@ -45,11 +45,13 @@
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
     "@types/http-graceful-shutdown": "^2.3.0",
+    "@types/http-status": "^1.1.2",
     "@types/jest": "^27.4.1",
     "@types/joi": "^17.2.3",
     "@types/log4js": "^2.3.5",
-    "@types/node-fetch": "^2.6.1",
+    "@types/node-fetch": "^2.5.8",
     "@types/semver": "^7.3.9",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
